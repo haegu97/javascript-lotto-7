@@ -44,6 +44,9 @@ class LottoController {
 
   async #generateWinningLotto() {
     const winningNumbers = await this.#inputView.getWinningNumbers();
+    const bonusNumber = await this.#inputView.getBonusNumber();
+
+    this.#lottoManager.makeWinningLotto(winningNumbers, bonusNumber);
   }
 }
 

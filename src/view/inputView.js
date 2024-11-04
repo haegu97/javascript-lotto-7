@@ -15,6 +15,13 @@ class InputView {
 
     return numbers.split(",").map((num) => Number(num));
   }
+
+  async getBonusNumber() {
+    const number = await await Console.readLineAsync(
+      MESSAGE.input.BOUNUS_NUMBER
+    );
+    return Number(number);
+  }
 }
 
 export default InputView;
