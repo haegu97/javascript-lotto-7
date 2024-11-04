@@ -3,6 +3,11 @@ export const MESSAGE = Object.freeze({
     PURCHASE: "구입금액을 입력해 주세요.\n",
   },
 
+  output: {
+    PURCHASE_AMOUNT: (numbers) => `${numbers}개를 구매했습니다.`,
+    LOTTOS: (numbers) => `[${numbers.join(", ")}]`,
+  },
+
   error: {
     PREFIX: "[ERROR]",
     INVALID_NUMBER: "숫자만 입력 가능합니다.\n",
@@ -11,4 +16,6 @@ export const MESSAGE = Object.freeze({
     DUPLICATED_NUMBERS: "로또 번호는 중복될 수 없습니다.\n",
     INVALID_RANGE: "로또 번호는 1~45 사이여야 합니다.\n",
   },
+
+  newLine: "",
 });

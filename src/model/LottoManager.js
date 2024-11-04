@@ -30,6 +30,13 @@ class LottoManager {
       this.lottos.push(lotto);
     }
   }
+
+  getPurchaseDTO() {
+    return {
+      lottosAmount: this.lottosAmount,
+      lottos: this.lottos.map((lotto) => lotto.getNumbers()),
+    };
+  }
 }
 
 export default LottoManager;

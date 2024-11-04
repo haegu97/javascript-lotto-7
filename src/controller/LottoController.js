@@ -1,13 +1,17 @@
 import LottoManager from "../model/LottoManager.js";
 import InputView from "../view/inputView.js";
+import OutputView from "../view/outputView.js";
+
 import { Console } from "@woowacourse/mission-utils";
 
 class LottoController {
   #inputView;
+  #outputView;
   #lottoManager;
 
   constructor() {
     this.#inputView = new InputView();
+    this.#outputView = new OutputView();
   }
 
   async startLotto() {
@@ -21,6 +25,7 @@ class LottoController {
     }
 
     await this.#lottoManager.makeLotto();
+    this.#outputView.printPurchaseResult(this.#lottoManager.getPurchaseDTO());
   }
 
   async #generateLottoManager() {
