@@ -24,3 +24,11 @@ export const validateNumbersRange = (numbers) => {
     }).length !== CONSTANTS.COUNT_OF_NUMBERS
   );
 };
+
+export const isBonusNumberInRange = (number) => {
+  return number >= CONSTANTS.MIN_NUMBER && number <= CONSTANTS.MAX_NUMBER;
+};
+
+export const isBonusNumberExist = (number, numbers) => {
+  return numbers.includes(number);
+};
