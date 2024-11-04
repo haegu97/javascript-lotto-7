@@ -26,11 +26,24 @@ class LottoController {
 
     await this.#lottoManager.makeLotto();
     this.#outputView.printPurchaseResult(this.#lottoManager.getPurchaseDTO());
+
+    while (true) {
+      try {
+        await this.#generateWinningLotto();
+        break;
+      } catch (err) {
+        Console.print(err.message);
+      }
+    }
   }
 
   async #generateLottoManager() {
     const cost = await this.#inputView.getCost();
     this.#lottoManager = new LottoManager(cost);
+  }
+
+  async #generateWinningLotto() {
+    const winningNumbers = await this.#inputView.getWinningNumbers();
   }
 }
 

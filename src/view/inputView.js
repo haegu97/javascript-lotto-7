@@ -8,6 +8,13 @@ class InputView {
 
     return Number(cost);
   }
+
+  async getWinningNumbers() {
+    const numbers = await Console.readLineAsync(MESSAGE.input.WINNING_NUMBER);
+    Console.print(MESSAGE.newLine);
+
+    return numbers.split(",").map((num) => Number(num));
+  }
 }
 
 export default InputView;

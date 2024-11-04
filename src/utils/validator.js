@@ -1,3 +1,5 @@
+import { CONSTANTS } from "../constants/constants.js";
+
 export const isNumber = (input) => {
   return !isNaN(input);
 };
@@ -18,7 +20,7 @@ export const validateDuplicateNumber = (input) => {
 export const validateNumbersRange = (numbers) => {
   return (
     numbers.filter((number) => {
-      return number >= 1 && number <= 45;
-    }).length !== 6
+      return number >= CONSTANTS.MIN_NUMBER && number <= CONSTANTS.MAX_NUMBER;
+    }).length !== CONSTANTS.COUNT_OF_NUMBERS
   );
 };
